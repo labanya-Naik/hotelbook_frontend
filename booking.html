@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Booking Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2 class="logo">🏨 MyHotel</h2>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="booking.html" class="active">Booking</a>
+      <a href="Bookingdtls.html">Booking Details</a>
+
+    </div>
+  </nav>
+
+  <div class="wrapper">
+    <div class="card">
+      <h1>Hotel Booking Form</h1>
+      <p class="subtext">Fill details to book your room</p>
+
+      <form id="hotelForm" novalidate>
+
+        <!-- Dates -->
+        <div class="grid">
+          <div class="field">
+            <label for="checkin">Check-in Date <span>*</span></label>
+            <input type="date" id="checkin" required />
+            <small class="error" id="checkinError"></small>
+          </div>
+
+          <div class="field">
+            <label for="checkout">Check-out Date <span>*</span></label>
+            <input type="date" id="checkout" required />
+            <small class="error" id="checkoutError"></small>
+          </div>
+        </div>
+
+        <!-- Hotel Name + Room Type -->
+        <div class="grid">
+
+          <!-- ✅ Hotel Name -->
+          <div class="field">
+            <label for="hotelName">Hotel Name <span>*</span></label>
+            <select id="hotelName" required>
+              <option value="">-- Select Hotel --</option>
+              <option value="Royal Palace">Royal Palace</option>
+              <option value="Ocean View Resort">Ocean View Resort</option>
+              <option value="Green Valley Inn">Green Valley Inn</option>
+              <option value="City Lights Hotel">City Lights Hotel</option>
+            </select>
+            <small class="error" id="hotelError"></small>
+          </div>
+
+          <!-- Room Type -->
+          <div class="field">
+            <label for="roomType">Room Type <span>*</span></label>
+            <select id="roomType" required>
+              <option value="">-- Select Room Type --</option>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+              <option value="Suite">Suite</option>
+            </select>
+            <small class="error" id="roomError"></small>
+          </div>
+
+        </div>
+<!-- Contact Details -->
+<div class="grid">
+
+  <!-- Email -->
+  <div class="field">
+    <label for="email">Email ID <span>*</span></label>
+    <input
+      type="email"
+      id="email"
+      placeholder="example@gmail.com"
+      required
+    />
+    <small class="error" id="emailError"></small>
+  </div>
+
+  <!-- Mobile -->
+  <div class="field">
+    <label for="mobile">Mobile Number <span>*</span></label>
+    <input
+      type="text"
+      id="mobile"
+      placeholder="10-digit mobile number"
+      maxlength="10"
+      required
+    />
+    <small class="error" id="mobileError"></small>
+  </div>
+
+</div>
+
+
+        <!-- ✅ Adults + Children (FIX ADDED) -->
+        <div class="grid">
+          <div class="field">
+            <label for="adults">Adults <span>*</span></label>
+            <input type="number" id="adults" min="1" value="1" required />
+          </div>
+
+          <div class="field">
+            <label for="children">Children</label>
+            <input type="number" id="children" min="0" value="0" />
+          </div>
+        </div>
+
+        <small class="error" id="guestError"></small>
+
+        <!-- Special Requests -->
+        <div class="field">
+          <label for="requests">Special Requests (Optional)</label>
+          <textarea id="requests" rows="4" placeholder="Any special needs, notes, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Booking</button>
+
+        <p id="successMsg" class="success"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  /* 🌟 Attractive Light Background */
+  background: linear-gradient(135deg,
+      #eaf2ff,
+      #fdfefe,
+      #eef9ff);
+
+  background-attachment: fixed;
+}
+
+
+/* =========================
+   ✅ Navbar
+========================= */
+.navbar {
+  background: #0066ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  color: white;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+/* =========================
+   ✅ FULL HERO BANNER SLIDER
+========================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background slider */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Text on top */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  opacity: 0.95;
+  margin-bottom: 18px;
+}
+
+/* Search box inside hero */
+.hero .search-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero .search-box input {
+  width: 320px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.hero .search-box button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #0066ff;
+  color: white;
+}
+
+.hero .search-box button:hover {
+  background: #004ed1;
+}
+
+/* Hero arrows */
+.hero-btns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero-arrow {
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+/* =========================
+   ✅ Sections
+========================= */
+.section {
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0066ff;
+}
+
+/* =========================
+   ✅ Hotels
+========================= */
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.hotel-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.hotel-info {
+  padding: 12px;
+}
+
+.hotel-info h3 {
+  margin-bottom: 5px;
+}
+
+.rating {
+  color: #ff9800;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.book-btn {
+  display: inline-block;
+  background: #0066ff;
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.no-result {
+  text-align: center;
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+/* ✅ buttons under hotel cards */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* details button */
+.details-btn {
+  border: none;
+  background: #00c6ff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.details-btn:hover {
+  background: #0099cc;
+}
+
+/* =========================
+   ✅ About + Facilities
+========================= */
+.about p {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  color: #444;
+  line-height: 1.6;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.facility-box {
+  background: white;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* =========================
+   ✅ Booking form
+========================= */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+.card {
+  background: white;
+  width: 100%;
+  max-width: 700px;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h1 {
+  text-align: center;
+  color: #0066ff;
+  margin-bottom: 6px;
+}
+
+.subtext {
+  text-align: center;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.field label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.field label span {
+  color: red;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 10px;
+}
+
+.guest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.hint {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.success {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #0066ff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* =========================
+   ✅ Footer
+========================= */
+.footer {
+  background: #0066ff;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 30px;
+}
+
+/* =========================
+   ✅ Modal Popup
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  z-index: 999;
+}
+
+.modal-box {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-box h2 {
+  color: #0066ff;
+  margin-bottom: 8px;
+}
+
+.modal-box h3 {
+  margin-top: 12px;
+  color: #333;
+}
+
+.modal-rating {
+  color: #ff9800;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   ✅ Responsive Design
+========================= */
+@media (max-width: 900px) {
+  .hotel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 75vh;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero .search-box input {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .hotel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Admin Table */
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.booking-table th {
+  background: #0066ff;
+  color: white;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+.facility-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.facility-box i {
+  font-size: 22px;
+  color: #0066ff;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 15px;
+  }
+}
